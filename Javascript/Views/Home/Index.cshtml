@@ -1,0 +1,76 @@
+﻿@{
+    Layout = null;
+}
+
+<!Doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script type="text/javascript">
+        var Framework = {
+            Helper: {
+                UI: {
+                    Sum: function () {
+                        var number1 = parseInt(document.getElementById("txt1").value);
+                        var number2 = parseInt(document.getElementById("txt2").value);
+                        var result = number1 + number2;
+                        document.getElementById("resulttxt").innerHTML = result;
+                    },
+
+                    Extract: function () {
+                        var number1 = parseInt(document.getElementById("txt1").value);
+                        var number2 = parseInt(document.getElementById("txt2").value);
+                        var result = number1 - number2;
+                        document.getElementById("resulttxt").innerHTML = result;
+                    },
+
+                    Multiply: function () {
+                        var number1 = parseInt(document.getElementById("txt1").value);
+                        var number2 = parseInt(document.getElementById("txt2").value);
+                        var result = number1 * number2;
+                        document.getElementById("resulttxt").innerHTML = result;
+                    },
+
+                    Div: function () {
+                        var number1 = parseInt(document.getElementById("txt1").value);
+                        var number2 = parseInt(document.getElementById("txt2").value);
+                        var result = number1 / number2;
+                        document.getElementById("resulttxt").innerHTML = result;
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        #div {
+            width: 210px;
+            height: 240px;
+            padding: 20px;
+            background-color: skyblue;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -120px;
+            margin-top: -100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="div">
+       <input placeholder="Birinci sayıyı giriniz..." type="text" name="txt1" id="txt1" value="" style="width:160px" /><br /><br />
+       <input placeholder="İkinci sayıyı giriniz..." type="text" name="txt2" id="txt2" value="" style="width:160px" /><br /><br />
+
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <input class="btn btn-danger" type="button" onclick='Framework.Helper.UI.Sum()' value="+">
+            <input class="btn btn-success" type="button" onclick='Framework.Helper.UI.Div()' value="%">
+            <input class="btn btn-primary" type="button" onclick='Framework.Helper.UI.Extract()' value="-">
+            <input class="btn btn-dark" type="button" onclick='Framework.Helper.UI.Multiply()' value="*">
+        </div>
+
+        <br /><br />
+        <label>Sonuç: </label><p id="resulttxt"></p>
+    </div>
+  
+</body>
+</html>
